@@ -1,0 +1,15 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: cluster-internal-development
+  namespace: flux-system
+spec:
+  interval: 6h
+  prune: true
+  path: ./clusters/internal-development/remote
+  kubeConfig:
+    secretRef:
+      name: cluster-internal-development
+  sourceRef:
+    kind: GitRepository
+    name: control-plane
