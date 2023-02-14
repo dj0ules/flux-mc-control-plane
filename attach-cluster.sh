@@ -66,7 +66,7 @@ flux install --kubeconfig "${HOST_KUBECONFIG:-${KUBECONFIG}}"
 CLONEDIR=$(mktemp -d)
 trap 'cleanup $CLONEDIR' EXIT
 CLUSTERDIR="$CLONEDIR/clusters/$NAME"
-git clone git@github.com:makkes/flux-mc-control-plane.git "$CLONEDIR"
+git clone git@github.com:dj0ules/flux-mc-control-plane.git "$CLONEDIR"
 
 cd "$CLONEDIR"
 if [ -a "$CLUSTERDIR" ] ; then
